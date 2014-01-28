@@ -1,5 +1,5 @@
 <?php
-	// Testing	
+		
 	define(ENDPOINT, "/v2/feeds/");
 	define(BASEURL,"https://api.xively.com");
 	
@@ -10,18 +10,17 @@
 		$graph_url = BASEURL . ENDPOINT . $FEED_ID . "/datastreams/" . $DATASTREAM_ID . ".png?";
 		
 		$args = array('width' 		 => $w,
-					  'height' 		 => $h,
-					  'color' 		 => $c,
-					  'title' 		 => $t,
-					  'legend' 		 => $l,
-					  'stroke' 		 => $s,
-					  'axislabels'   => $b,
-					  'detailedgrid' => $g,
-					  'scale' 		 => $scale,
-					  'min' 		 => $min,
-					  'max' 		 => $max,
-					  'timezone' 	 => $timzezone);
-					  
+			      'height' 		 => $h,
+			      'color' 		 => $c,
+			      'title' 		 => $t,
+			      'legend' 		 => $l,
+			      'stroke' 		 => $s,
+			      'axislabels'	 => $b,
+			      'detailedgrid' 	 => $g,
+			      'scale' 		 => $scale,
+			      'min' 		 => $min,
+			      'max' 		 => $max,
+			      'timezone' 	 => $timzezone);		  
 		foreach($args as $key => $arg)
 		{
 			if(isset($arg) && $arg != "")

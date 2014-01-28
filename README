@@ -1,0 +1,28 @@
+Xively-PHP is a simple PHP wrapper for some basic Xively API functions.
+
+Authored by: Joe Pettit
+
+USAGE
+---------------
+
+getGraph() 
+
+Description:
+	Takes various args, returns HTML img tag for the graph.
+
+Arguments:
+	API_KEY			 Required, this is your Xively API Key
+	FEED_ID			 Required, this is the feed ID 
+	DATA_STREAM_ID		 Required, this is the name of your datastream (cap sensitive)
+	WIDTH			 Optional, width of the graph
+	HEIGHT			 Optional, height of the graph
+	COLOR			 Optional, color of graph line
+	TITLE			 Optional, graph title, also used for alt text
+	LEGEND			 Optional, legend labels
+	STROKESIZE		 Optional, size of stroke on graph line
+	AXISLABELS		 Optional, axis labels
+	DETAILEDGRID		 Optional, grid detail level
+	SCALE			 Optional, per Xively, options are: auto / Datastream / manual
+	MIN			 Optional, y-axis minimum
+	MAX			 Optional, y-axis maximum
+	TIMEZONE		 Optional, timezone for graph
