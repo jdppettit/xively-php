@@ -1,5 +1,5 @@
 <?php
-	
+	// Testing	
 	define(ENDPOINT, "/v2/feeds/");
 	define(BASEURL,"https://api.xively.com");
 	
