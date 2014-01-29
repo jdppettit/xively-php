@@ -5,7 +5,7 @@ Authored by: Joe Pettit
 USAGE
 ---------------
 
-getGraph() 
+getGraph(API_KEY,FEED_ID,DATA_STREAM_ID,OPT_ARGS) 
 
 Description:
 	Takes various args, returns HTML img tag for the graph.
@@ -26,3 +26,73 @@ Arguments:
 	MIN			 Optional, y-axis minimum
 	MAX			 Optional, y-axis maximum
 	TIMEZONE		 Optional, timezone for graph
+
+All arguments should be formatted as strings.
+
+----
+
+sendDatapoint(API_KEY,FEED_ID,DATA)
+
+Description:
+	Takes an API key, feed ID and JSON formatted data and sends a PUT request to Xively.
+
+Arguments:
+	API_KEY			Required, this is your Xively API Key
+	FEED_ID			Required, this is the feed ID
+	DATA			Required, JSON formatted data, see Xively API guide for more info
+
+All arguments should be formatted as strings.
+
+----
+
+makeDatastream(API_KEY,FEED_ID,DATA)
+
+This is the same exact function as above. The Xively API will automatically make a datastream
+if it doesn't exist. Added for the sake of convenience. 
+
+
+EXAMPLES
+------------
+
+Get a graph:
+	
+	$res = getGraph("apikey","feedid","helloworld");
+	echo $res;
+
+Would output:
+
+	<img src="https://api.xively.com/v2/feeds/feedid/datastreams/datastream/helloworld.png?">
+
+----
+
+Send some data:
+
+	sendDatapoint("apikey","feedid","somejson");
+
+Would return:
+
+	If successful: 1
+	If failed: error message
+
+----
+
+Make a feed:
+
+	Literally the same thing as above, except the JSON mentions a datastream that doesn't exist
+
+----
+
+JSON example:
+
+{
+  "datastreams": [
+    {
+      "current_value": "hullo, this is data",
+      "id": "NameOfYourFeed"
+    }
+  ],
+  "version": "1.0.0"
+}
+
+
+
